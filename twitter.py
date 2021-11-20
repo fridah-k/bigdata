@@ -26,10 +26,10 @@ DATASET_ENCODING = "ISO-8859-1"
 # encoding is used converting binary into values which the machine understands.
 #it is a character standard encoding
 df= pd.read_csv('/home/fridah/Downloads/twitter.csv', encoding=DATASET_ENCODING, names=DATASET_COLUMNS)
-# print(df.sample(5))
-# print(df.head())
+print(df.sample(5))
+print(df.head())
 ## EXPLANATORY DATA ANALYSIS
-# print(df.columns)
+print(df.columns)
 # lenghth of the dataset
 # print('length of data is', len(df))
 # shape of the dataset
@@ -154,18 +154,18 @@ print(dataset['text'].head())
 X= data.text
 y= data.target
 # # plot cloud of words for negative tweets
-# data_neg= data['text']
-# wordcloud= WordCloud(max_words= 100, width= 1600, height= 800, collocations=False).generate(" ".join(data_neg))
-# plt.figure(figsize= (20,20))
-# plt.imshow(wordcloud, interpolation="bilinear")
-# plt.show()
-# # # plot positive tweets
-# # data_pos= data['text']
-# # wordcloud= WordCloud(max_words= 1000, width= 1600, height= 800, collocations=False).generate(data_pos)
-# # plt.figure(figsize=(20, 20))
-# # plt.imshow(wordcloud, interpolation="bilinear")
-# # plt.show()
-# # splitting the data into train and test
+data_neg= data['text']
+wordcloud= WordCloud(max_words= 100, width= 1600, height= 800, collocations=False).generate(" ".join(data_neg))
+plt.figure(figsize= (20,20))
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.show()
+# # plot positive tweets
+# data_pos= data['text']
+# wordcloud= WordCloud(max_words= 1000, width= 1600, height= 800, collocations=False).generate(data_pos)
+# plt.figure(figsize=(20, 20))
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.show()
+# splitting the data into train and test
 X_train, X_test, y_train, y_test= train_test_split(X,y,test_size= 0.05, random_state= 25456167)
 # # transforming data using TF-IDF VECTORIZER
 # # it transforms text into meaningful representation of numbers
